@@ -1,1 +1,5 @@
 invoke
+jsonpath-rw
+rfapi
+pytest
+pytest-dependency
