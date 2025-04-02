@@ -2,3 +2,4 @@ venv
 
 pkg_build
 recordedfuture-*.tgz
+playbook_build
