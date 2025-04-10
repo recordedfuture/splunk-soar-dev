@@ -34,9 +34,7 @@ def extract_test_names(test_folder_path):
                     # Extract function and method names
                     for node in ast.walk(tree):
                         # Check for standalone test functions
-                        if isinstance(node, ast.FunctionDef) and node.name.startswith(
-                            "test_"
-                        ):
+                        if isinstance(node, ast.FunctionDef) and node.name.startswith("test_"):
                             test_names.append(node.name)
 
                         # Check for test methods in classes
@@ -44,9 +42,7 @@ def extract_test_names(test_folder_path):
                             # If class name suggests it's a test class
                             if "Test" in node.name:
                                 for item in node.body:
-                                    if isinstance(
-                                        item, ast.FunctionDef
-                                    ) and item.name.startswith("test_"):
+                                    if isinstance(item, ast.FunctionDef) and item.name.startswith("test_"):
                                         test_names.append(f"{item.name}")
 
                     if test_names:

@@ -26,9 +26,7 @@ def test_alert_search(run_action):
     """Super slow, should we actually have a limit on amount alert fetched"""
     result = run_action("alert rule search", [{"rule_search": ""}])
     rule_id = result[0]["id"]
-    result = run_action(
-        "alert search", [{"rule_id": rule_id, "timeframe": "-24h to now"}]
-    )
+    result = run_action("alert search", [{"rule_id": rule_id, "timeframe": "-24h to now"}])
 
     assert list(result.keys()) == ["rule", "alerts"]
 
