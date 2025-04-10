@@ -40,9 +40,7 @@ def app_id(client):
     result = client.app_status()
     apps = result["data"]
     try:
-        rf_app = [a for a in apps if "Recorded Future For Splunk SOAR" in a["message"]][
-            0
-        ]
+        rf_app = [a for a in apps if "Recorded Future For Splunk SOAR" in a["message"]][0]
     except Exception:
         raise ValueError("Our app is not configured")
     return rf_app["id"]

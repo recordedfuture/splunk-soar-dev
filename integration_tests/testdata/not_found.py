@@ -97,7 +97,7 @@ testdata_404_intelligence_file = {
             "relatedEntities": [],
         }
     ],
-    "message": "Risksummary: No information available., " "Criticalitylabel: None, Lastseen: never",
+    "message": "Risksummary: No information available., Criticalitylabel: None, Lastseen: never",
 }
 
 # DOMAIN
@@ -122,7 +122,7 @@ testdata_404_intelligence_url = {
             "entity": {"name": "", "id": None, "type": None},
         }
     ],
-    "message": "Risksummary: No information available., " "Criticalitylabel: None, Lastseen: never",
+    "message": "Risksummary: No information available., Criticalitylabel: None, Lastseen: never",
 }
 
 testdata_404_intelligence_vulnerability = {
@@ -145,7 +145,7 @@ testdata_404_intelligence_vulnerability = {
             "relatedEntities": [],
         }
     ],
-    "message": "Risksummary: No information available., " "Criticalitylabel: None, Lastseen: never",
+    "message": "Risksummary: No information available., Criticalitylabel: None, Lastseen: never",
 }
 
 testdata_404_intelligence_ip = {
@@ -169,5 +169,5 @@ testdata_404_intelligence_ip = {
             "relatedEntities": [],
         }
     ],
-    "message": "Risksummary: No information available., " "Criticalitylabel: None, Lastseen: never",
+    "message": "Risksummary: No information available., Criticalitylabel: None, Lastseen: never",
 }

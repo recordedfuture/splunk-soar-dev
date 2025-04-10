@@ -14,9 +14,7 @@ def test_threat_assessment(run_action):
 
 
 def test_threat_actor_intelligence(run_action):
-    result = run_action(
-        "threat actor intelligence", [{"threat_actor": "Killnet", "links": False}]
-    )
+    result = run_action("threat actor intelligence", [{"threat_actor": "Killnet", "links": False}])
     expected_keys = [
         "id",
         "name",

@@ -33,13 +33,13 @@ def clean(c):
 @task
 def check_black(c):
     """Check that code complies with black requirements"""
-    c.run("black --check . --line-length 145")
+    c.run("ruff format --check . --line-length 145")
 
 
 @task
 def black(c):
     """Run black on the code"""
-    c.run("black . --line-length 145")
+    c.run("ruff format . --line-length 145")
 
 
 @task(check_black)
@@ -85,9 +85,7 @@ def _create_package(c, target):
 
     def read_files(package_name):
         for ext in [".json", ".py"]:
-            with open(
-                f"{PLAYBOOK_PATH}/{package_name}/{package_name}{ext}", "r"
-            ) as file:
+            with open(f"{PLAYBOOK_PATH}/{package_name}/{package_name}{ext}", "r") as file:
                 yield from file
 
     if not os.path.exists(DIST_DIR):

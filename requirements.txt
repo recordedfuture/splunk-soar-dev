@@ -3,3 +3,4 @@ jsonpath-rw
 rfapi
 pytest
 pytest-dependency
+ruff
