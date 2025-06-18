@@ -16,6 +16,13 @@ When making changes to the submodule (splunk-soar), cd into the directory and co
 
 If you truly want to understand the ins and outs of git submodules, read this blog post > https://www.cyberdemon.org/2024/03/20/submodules.html (also [archived](https://archive.is/Q3QOz))
 
+## Working with Splunk SOAR git repo
+
+- Develop in main
+- Branch out into release candidate branch send PR to upstream main
+- Rebase upstream main into main
+- Repeat
+
 ## Developing on Splunk-soar
 
 Execute the following commands and you'll see how to build the package.
