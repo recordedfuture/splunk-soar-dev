@@ -4,3 +4,7 @@ rfapi
 pytest
 pytest-dependency
 ruff
+freezegun
+requests-mock
+beautifulsoup4
+git+https://github.com/splunk/pytest-splunk-soar-connectors

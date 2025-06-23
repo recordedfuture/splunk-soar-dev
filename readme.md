@@ -36,7 +36,16 @@ inv --list  # gives you all commands that you can run.
 
 ## Testing
 
-We have no unittests for splunk-soar as we can't really break it down into units. So we're left with pure integration tests. In `test_action_inclusion`, we do assert that all actions have test method associated with them.
+### Unit-tests
+
+Run this command to run unit-tests.
+```
+pytest
+```
+
+### Integration tests
+
+In `test_action_inclusion`, we do assert that all actions have test method associated with them.
 
 To run the integration tests start splunk-soar in smeden. The start of the instance takes at least 30min.
 
