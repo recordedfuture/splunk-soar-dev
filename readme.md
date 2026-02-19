@@ -23,6 +23,18 @@ If you truly want to understand the ins and outs of git submodules, read this bl
 - Rebase upstream main into main
 - Repeat
 
+## Release steps
+1. git pull
+2. git pull upstream main
+3. git push origin main -f 
+4. git checkout -b "release_splunk_soar_x_y_z"
+   1. Update unreleased.md, expected md list with changes.
+   2. Update all version numbers
+   3. Push chagnes to release brnach
+5. Go to branch in UI and press "contribute" -> Open pull request
+6. Fill in template. 
+7. Done
+
 ## Developing on Splunk-soar
 
 Execute the following commands and you'll see how to build the package.
