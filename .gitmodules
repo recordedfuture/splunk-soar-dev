@@ -1,3 +1,3 @@
 [submodule "splunk-soar"]
 	path = splunk-soar
-	url = git@github.com:recordedfuture/splunk-soar.git
+	url = git@github.com:recfut/app-splunk-soar.git
