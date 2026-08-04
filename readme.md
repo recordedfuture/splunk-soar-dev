@@ -11,6 +11,12 @@ git clone <this repo>
 git submodule init
 git submodule update # fetches the latest commits from submodule repo
 ```
+In case the submodule is not initialized or not up to date, you can also do:
+
+```shell
+git submodule update --init --recursive --remote
+```
+
 
 When making changes to the submodule (splunk-soar), cd into the directory and commit your changes there.
 
@@ -45,6 +51,8 @@ python -m venv venv
 pip install -r requirements.txt
 inv --list  # gives you all commands that you can run.
 ```
+
+The `inv package` command will create a package with the release version as stated in tasks.py
 
 ## Testing
 
