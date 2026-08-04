@@ -30,15 +30,15 @@ If you truly want to understand the ins and outs of git submodules, read this bl
 - Repeat
 
 ## Release steps
-1. git pull
-2. git pull upstream main
-3. git push origin main -f 
-4. git checkout -b "release_splunk_soar_x_y_z"
-   1. Update unreleased.md, expected md list with changes.
+1. `git pull`
+2. `git pull upstream main`
+3. `git push origin main -f`
+4. `git checkout -b "release_splunk_soar_x_y_z"`
+   1. Update `unreleased.md`, expected md list with changes.
    2. Update all version numbers
-   3. Push chagnes to release brnach
+   3. Push changes to release branch
 5. Go to branch in UI and press "contribute" -> Open pull request
-6. Fill in template. 
+6. Fill in template
 7. Done
 
 ## Developing on Splunk-soar
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 inv --list  # gives you all commands that you can run.
 ```
 
-The `inv package` command will create a package with the release version as stated in tasks.py
+The `inv package` command will create a package with the release version as stated in `tasks.py`
 
 ## Testing
 
