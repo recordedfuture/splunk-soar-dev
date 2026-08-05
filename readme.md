@@ -11,6 +11,12 @@ git clone <this repo>
 git submodule init
 git submodule update # fetches the latest commits from submodule repo
 ```
+In case the submodule is not initialized or not up to date, you can also do:
+
+```shell
+git submodule update --init --recursive --remote
+```
+
 
 When making changes to the submodule (splunk-soar), cd into the directory and commit your changes there.
 
@@ -24,15 +30,15 @@ If you truly want to understand the ins and outs of git submodules, read this bl
 - Repeat
 
 ## Release steps
-1. git pull
-2. git pull upstream main
-3. git push origin main -f 
-4. git checkout -b "release_splunk_soar_x_y_z"
-   1. Update unreleased.md, expected md list with changes.
+1. `git pull`
+2. `git pull upstream main`
+3. `git push origin main -f`
+4. `git checkout -b "release_splunk_soar_x_y_z"`
+   1. Update `unreleased.md`, expected md list with changes.
    2. Update all version numbers
-   3. Push chagnes to release brnach
+   3. Push changes to release branch
 5. Go to branch in UI and press "contribute" -> Open pull request
-6. Fill in template. 
+6. Fill in template
 7. Done
 
 ## Developing on Splunk-soar
@@ -45,6 +51,8 @@ python -m venv venv
 pip install -r requirements.txt
 inv --list  # gives you all commands that you can run.
 ```
+
+The `inv package` command will create a package with the release version as stated in `tasks.py`
 
 ## Testing
 
@@ -65,7 +73,7 @@ To run the integration tests start splunk-soar in smeden. The start of the insta
 @smeden create_int splunk_soar dev current 72
 ```
 
-Once splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Managment > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+Once Splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Management > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
 
 Set the environment variables.
 ```
