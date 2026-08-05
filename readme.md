@@ -73,7 +73,7 @@ To run the integration tests start splunk-soar in smeden. The start of the insta
 @smeden create_int splunk_soar dev current 72
 ```
 
-Once splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Management > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+Once Splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Management > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
 
 Set the environment variables.
 ```
