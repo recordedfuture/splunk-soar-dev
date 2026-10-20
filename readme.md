@@ -67,15 +67,25 @@ pytest
 
 In `test_action_inclusion`, we do assert that all actions have test method associated with them.
 
-To run the integration tests start splunk-soar in smeden. The start of the instance takes at least 30min.
+To run the integration tests start splunk-soar in smeden.
 
 ```
 @smeden create_int splunk_soar dev current 72
 ```
 
-Once Splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Management > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+NOTE: **The start of the instance takes around 30min.**
 
-Set the environment variables.
+Login
+username: soar_local_admin
+password: (check keeper at Admin login for splunk soar)
+
+Once splunk is started you need to get an auth token to the instance. You'll find this auth token in
+
+- `Administration > User Managment > Users > Add User > Select automation`.
+
+There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+
+Set the environment variables, you can use .env.example and create your own .env
 ```
 export PHOST="in-1137a.recfut.net"
 export PTOK=<token>
