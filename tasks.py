@@ -1,10 +1,16 @@
-import tarfile
+import json
 import os
 import re
+import tarfile
 from invoke import task
 from invoke.collection import Collection
 
-RELEASE = "4.4.3"
+with open(
+    os.path.join(os.path.dirname(__file__), "splunk-soar", "recordedfuture.json"),
+    encoding="utf-8",
+) as manifest_file:
+    RELEASE = json.load(manifest_file)["app_version"]
+
 BUILD_DIR = "pkg_build"
 PACKAGE = f"recordedfuture-{RELEASE}.tgz"
 
