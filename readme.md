@@ -56,14 +56,7 @@ The `inv package` command will create a package with the release version as stat
 
 ## Testing
 
-### Unit-tests
-
-Run this command to run unit-tests.
-```
-pytest
-```
-
-### Integration tests
+There are some unittests in the splunk-soar app, so you can run them from there. The description below goes for the integration tests in this directory.
 
 In `test_action_inclusion`, we do assert that all actions have test method associated with them.
 
@@ -91,3 +84,15 @@ export PHOST="in-1137a.recfut.net"
 export PTOK=<token>
 export RF_TOKEN=<token>
 ```
+
+Run it!
+
+```shell
+pytest integration_tests
+```
+
+
+### Install the app on host
+
+Apps > Install App. Then drop the app from the generated from the command `inv package`.
+You need to set the "Asset name" and the Recorded Future API token.

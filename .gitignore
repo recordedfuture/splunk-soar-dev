@@ -88,3 +88,4 @@ Thumbs.db
 # Logs
 *.log
 .env
+notes.md
