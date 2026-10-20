@@ -1,10 +1,16 @@
-import tarfile
+import json
 import os
 import re
+import tarfile
 from invoke import task
 from invoke.collection import Collection
 
-RELEASE = "4.4.3"
+with open(
+    os.path.join(os.path.dirname(__file__), "splunk-soar", "recordedfuture.json"),
+    encoding="utf-8",
+) as manifest_file:
+    RELEASE = json.load(manifest_file)["app_version"]
+
 BUILD_DIR = "pkg_build"
 PACKAGE = f"recordedfuture-{RELEASE}.tgz"
 
@@ -19,6 +25,15 @@ PACKAGES = [
 DIST_DIR = "playbook_build"
 PRIVATE_KEYWORDS = re.compile(r"recfut|@recordedfuture")
 PLAYBOOK_PATH = "./integration_tests/playbooks"
+
+
+@task
+def update(c):
+    """Update the submodule pointer and push it to the parent repository."""
+    c.run("git -C splunk-soar pull origin main")
+    c.run("git add splunk-soar")
+    c.run('git commit -m "Update submodule"')
+    c.run("git push origin main")
 
 
 @task
@@ -116,6 +131,7 @@ def _create_package(c, target):
 
 
 namespace = Collection()
+namespace.add_task(update)
 namespace.add_task(black)
 namespace.add_task(check_black)
 namespace.add_task(package)

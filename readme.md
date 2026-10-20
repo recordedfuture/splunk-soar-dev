@@ -56,28 +56,46 @@ The `inv package` command will create a package with the release version as stat
 
 ## Testing
 
-### Unit-tests
-
-Run this command to run unit-tests.
-```
-pytest
-```
-
-### Integration tests
+There are some unittests in the splunk-soar app, so you can run them from there. The description below goes for the integration tests in this directory.
 
 In `test_action_inclusion`, we do assert that all actions have test method associated with them.
 
-To run the integration tests start splunk-soar in smeden. The start of the instance takes at least 30min.
+To run the integration tests start splunk-soar in smeden.
 
 ```
 @smeden create_int splunk_soar dev current 72
 ```
 
-Once Splunk is started you need to get an auth token to the instance. You'll find this auth token in `Administration > User Management > Users > Add User > Select automation`. There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+NOTE: **The start of the instance takes around 30min.**
 
-Set the environment variables.
+Login
+username: soar_local_admin
+password: (check keeper at Admin login for splunk soar)
+
+Once splunk is started you need to get an auth token to the instance. You'll find this auth token in
+
+- `Administration > User Managment > Users > Add User > Select automation`.
+
+There may already be an automation user, in which case you can use the token from there. The automation user needs the role `Observer` to work.
+
+Set the environment variables, you can use .env.example and create your own .env
 ```
 export PHOST="in-1137a.recfut.net"
 export PTOK=<token>
 export RF_TOKEN=<token>
 ```
+
+Run it!
+
+```shell
+pytest integration_tests
+
+# This is unittests only in the splunk-soar app.
+pytest -c splunk-soar/pytest.ini splunk-soar/tests
+```
+
+
+### Install the app on host
+
+Apps > Install App. Then drop the app from the generated from the command `inv package`.
+You need to set the "Asset name" and the Recorded Future API token.

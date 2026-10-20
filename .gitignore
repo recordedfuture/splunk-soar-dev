@@ -3,7 +3,6 @@ venv
 pkg_build
 recordedfuture-*.tgz
 playbook_build
-
 *.tgz
 
 # Byte-compiled / optimized / DLL files
@@ -88,3 +87,5 @@ Thumbs.db
 
 # Logs
 *.log
+.env
+notes.md
