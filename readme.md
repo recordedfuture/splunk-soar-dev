@@ -89,6 +89,9 @@ Run it!
 
 ```shell
 pytest integration_tests
+
+# This is unittests only in the splunk-soar app.
+pytest -c splunk-soar/pytest.ini splunk-soar/tests
 ```
 
 

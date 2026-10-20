@@ -4,7 +4,9 @@ rfapi
 pytest
 pytest-dependency
 ruff
-freezegun
-requests-mock
+
+# Deps for splunk-soar repo tests
+git+https://github.com/splunk/pytest-splunk-soar-connectors.git
 beautifulsoup4
-git+https://github.com/splunk/pytest-splunk-soar-connectors
+freezegun
+requests_mock
