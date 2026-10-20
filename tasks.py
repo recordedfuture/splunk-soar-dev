@@ -28,6 +28,15 @@ PLAYBOOK_PATH = "./integration_tests/playbooks"
 
 
 @task
+def update(c):
+    """Update the submodule pointer and push it to the parent repository."""
+    c.run("git -C splunk-soar pull origin main")
+    c.run("git add splunk-soar")
+    c.run('git commit -m "Update submodule"')
+    c.run("git push origin main")
+
+
+@task
 def clean(c):
     """
     Removes build directory and earlier packaged release
@@ -122,6 +131,7 @@ def _create_package(c, target):
 
 
 namespace = Collection()
+namespace.add_task(update)
 namespace.add_task(black)
 namespace.add_task(check_black)
 namespace.add_task(package)
